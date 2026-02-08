@@ -79,6 +79,33 @@ npm run build
 npm run preview
 ```
 
+## Renderへのデプロイ
+
+このアプリはRenderに簡単にデプロイできます。
+
+### 自動デプロイ（推奨）
+
+1. [Render](https://render.com/)にアクセスしてアカウントを作成
+2. 「New +」ボタンから「Web Service」を選択
+3. GitHubリポジトリを接続: `https://github.com/sasatosh/forex-info-app`
+4. 以下の設定で作成:
+   - **Name**: forex-info-app（または任意の名前）
+   - **Environment**: Static Site
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `dist`
+5. 「Create Static Site」をクリック
+
+render.yamlが含まれているため、自動的に設定が適用されます。
+
+### デプロイ後
+
+デプロイが完了すると、Renderから以下のようなURLが発行されます：
+```
+https://forex-info-app.onrender.com
+```
+
+このURLでアプリにアクセスできます。GitHubにプッシュするたびに自動的に再デプロイされます。
+
 ## 使い方
 
 1. **基準通貨を選択**: ドロップダウンから基準通貨を選択（デフォルト: JPY）
