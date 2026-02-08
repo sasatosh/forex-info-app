@@ -32,17 +32,20 @@
   flex-wrap: wrap;
 }
 
-.currency-selector {
+.currency-selector,
+.date-selector {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.currency-selector label {
+.currency-selector label,
+.date-selector label {
   font-weight: 600;
 }
 
-.select {
+.select,
+.date-input {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border: 2px solid #667eea;
@@ -52,14 +55,20 @@
   transition: all 0.3s ease;
 }
 
-.select:hover {
+.select:hover,
+.date-input:hover {
   border-color: #764ba2;
 }
 
-.select:focus {
+.select:focus,
+.date-input:focus {
   outline: none;
   border-color: #764ba2;
   box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+}
+
+.date-input {
+  font-family: inherit;
 }
 
 .refresh-btn {
@@ -134,9 +143,10 @@
 
 .rates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .rate-card {
@@ -144,7 +154,6 @@
   border: 2px solid #e0e0e0;
   border-radius: 10px;
   padding: 1.5rem;
-  text-align: center;
   transition: all 0.3s ease;
 }
 
@@ -155,16 +164,90 @@
 }
 
 .currency-name {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #667eea;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.rates-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.rate-row.ttm {
+  background: #e3f2fd;
+  font-weight: 600;
+}
+
+.rate-row.ttb {
+  background: #fff3e0;
+}
+
+.rate-row.tts {
+  background: #f3e5f5;
+}
+
+.rate-label {
+  font-size: 0.85rem;
+  color: #555;
+  font-weight: 500;
 }
 
 .rate-value {
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: #333;
+}
+
+.info-box {
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  border: 2px solid #667eea;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.info-box h3 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.info-box li {
+  padding: 0.5rem 0;
+  color: #333;
+}
+
+.info-box li strong {
+  color: #667eea;
+  font-weight: 700;
+}
+
+.info-box .note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
 }
 
 @media (max-width: 768px) {
@@ -176,11 +259,51 @@
     font-size: 2rem;
   }
 
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .currency-selector,
+  .date-selector {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .select,
+  .date-input {
+    flex: 1;
+  }
+
+  .refresh-btn {
+    width: 100%;
+  }
+
   .rates-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: 1fr;
+  }
+
+  .currency-name {
+    font-size: 1.2rem;
   }
 
   .rate-value {
-    font-size: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .info-box {
+    padding: 1rem;
+  }
+
+  .info-box h3 {
+    font-size: 1rem;
+  }
+
+  .info-box li {
+    font-size: 0.9rem;
   }
 }
