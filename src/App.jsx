@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  const [baseCurrency, setBaseCurrency] = useState('JPY')
+  const [baseCurrency, setBaseCurrency] = useState('USD')
   const [exchangeRates, setExchangeRates] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
